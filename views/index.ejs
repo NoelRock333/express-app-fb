@@ -7,5 +7,11 @@
   <body>
     <h1><%= title %></h1>
     <p>Welcome to <%= title %></p>
+    <% users.forEach(function(user) { %>
+      <div>
+        <label><%= user.email %></label>
+        <span><%= user.full_name %></span>
+      </div>
+    <% }) %>
   </body>
 </html>
