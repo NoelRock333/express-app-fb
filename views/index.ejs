@@ -9,6 +9,7 @@
     <p>Bienvenido a <%= title %></p>
     <% users.forEach(function(user) { %>
       <div>
+        <span><%= user.id %></span>
         <label><%= user.email %></label>
         <span><%= user.full_name %></span>
       </div>
