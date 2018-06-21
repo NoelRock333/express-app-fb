@@ -1,9 +1,13 @@
 var express = require('express');
 var router = express.Router();
+var knex = require('../knex');
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
-  res.render('index', { title: 'Express', users: [] });
+  knex('users').select('email', 'full_name')
+    .then(data => {
+      res.render('index', { title: 'Mis usuarios', users: data });
+    })
 });
 
 module.exports = router;

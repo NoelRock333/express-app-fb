@@ -1,7 +1,6 @@
 var express = require('express');
 var router = express.Router();
-var knexFile = require('../knexfile');
-var knex = require('knex')(knexFile[process.env.NODE_ENV || 'development']);
+var knex = require('../knex');
 
 /* GET users listing. */
 router.get('/', function(req, res, next) {
@@ -15,7 +14,7 @@ router.post('/', function(req, res, next) {
     full_name: 'Noel Escobedo'
   })
   .then(data => {
-    res.json(data);
+    res.redirect('/');
   })
   .catch(err => {
     console.log(err);
